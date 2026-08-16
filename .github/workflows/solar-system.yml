@@ -65,6 +65,8 @@ jobs:
               retention-days: 5
     docker:
         name: docker
+        permissions:
+          packages: write
         needs: 
           - unit-testing
           - code-coverage
