@@ -53,8 +53,6 @@
          retention-days: 5         
     docker:
       runs-on: ubuntu-latest
-      permissions:
-        packages: write
       needs:
        - unit-testing
        - code-coverage
@@ -79,6 +77,8 @@
 
     dev-deploy:
       runs-on: ubuntu-latest
+      permissions:
+        packages: write
       needs: docker
       environment:
         name: deployment
